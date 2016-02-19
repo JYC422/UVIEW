@@ -1,9 +1,9 @@
 ##U * V I E W
 By Ray Chen
 
-**What Is It:** Resource for concise restaurant reviews
+**What Is It:** Resource for concise restaurant reviews. You will be able to search by restaurant/location and write reviews on your experiences, as well as read others' reviews. If you are a restaurant owner, you can register your restaurant to the site.
 
-**How To Use:** Create an account, find a restaurant, write a review
+**How To Use:** Search for the restaurant, see general info and reviews. Create an account to write a review or register your own restaurant.
 
 ##**Technologies:**  
 - HTML  
@@ -17,19 +17,13 @@ By Ray Chen
 
 ##**Design:**  
 **Main Menu**  
-![Alt text](https://i.imgur.com/2w5Qvn4.png)
-**Board**  
 ![Alt text]()
-**Game Design** 
-![Alt text]()
-**High Scores**
+**Restaurant**  
 ![Alt text]()
 
-1. Originally meant to be a photographic memory game
-2. Changed to a fast-paced clicking game
-3. Changed from time-based to cell-limited
-3. Added bonus boxes
-4. Added basic animations and music
+1. something
+2. 
+
 
 ##**Next Steps (Planned Features)**:  
 1. High Scores  
