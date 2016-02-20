@@ -3,7 +3,7 @@ By Ray Chen
 
 **What Is It:** Resource for concise restaurant reviews. You will be able to search by restaurant/location and write reviews on your experiences, as well as read others' reviews. If you are a restaurant owner, you can register your restaurant to the site.
 
-**How To Use:** Search for the restaurant, see general info and reviews. Create an account to write a review or register your own restaurant.
+**How To Use:** Search for the restaurant, see general info and reviews. Create an account to write your own reviews.
 
 ##**Technologies:**  
 - HTML  
@@ -12,22 +12,29 @@ By Ray Chen
 - JQuery  
 - JQuery UI  
 - Ruby  
-- Rails  
+- Ruby on Rails  
 - Bootstrap  
 
 ##**Design:**  
-**Main Menu**  
-![Alt text]()
+**Home**  
+![](https://i.imgur.com/vIKeX3X.jpg)  
+**Search**  
+![](https://i.imgur.com/YMLUmVe.jpg)  
 **Restaurant**  
-![Alt text]()
+![](https://i.imgur.com/w3yXOt9.png)  
+**User**  
+![](https://i.imgur.com/G98p45R.png)  
 
-1. something
-2. 
-
+1. Simple design
+2. Easy to look at and understand
+3. Informative and to the point
 
 ##**Next Steps (Planned Features)**:  
-1. High Scores  
-2. More animations  
+1. Search restaurant by map
+2. Working messaging system
+3. Verify restaurant owner
+4. Expand search locations
+5. Account email verification
 
 ###**Site**: http://jyc422.github.io/uview
 
