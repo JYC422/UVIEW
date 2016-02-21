@@ -24,6 +24,8 @@ By Ray Chen
 ![](https://i.imgur.com/w3yXOt9.png)  
 **User**  
 ![](https://i.imgur.com/G98p45R.png)  
+**ERD**  
+![](https://i.imgur.com/Y3bQyqc.jpg)  
 
 1. Simple design
 2. Easy to look at and understand
