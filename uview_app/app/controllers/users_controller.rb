@@ -1,5 +1,7 @@
 class UsersController < ApplicationController
 
+  before_action :authorize, only: [:edit, :update]
+
   def index
     @users = User.all
   end
@@ -20,6 +22,24 @@ class UsersController < ApplicationController
       redirect_to root_path
     else
       render 'new'
+    end
+  end
+
+  def edit
+    @user = User.find(params[:id])
+  end
+
+  def update
+    @user = User.find(params[:id])
+    if @user.update_attributes(params.require(:user).permit(
+    :id,
+    :user_name,
+    :num_reviews,
+    :about_me
+    ))
+      redirect_to current_user
+    else
+      render :edit
     end
   end
 

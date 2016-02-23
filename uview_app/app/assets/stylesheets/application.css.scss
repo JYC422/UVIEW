@@ -18,11 +18,22 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
-// body {
-//   background-image: url()
-// }
+@font-face {
+  font-family: Adamas;
+  src: url("Adamas.otf");
+}
 
-.navbar-text,
-.navbar-right {
-  float: right;
+.logo {
+  min-width: 435px;
+  font-size: 40px;
+  font-family: Adamas;
+}
+
+.navbar,
+.nav {
+  padding: 10px;
+}
+
+.navbar-text {
+  font-size: 20px;
 }

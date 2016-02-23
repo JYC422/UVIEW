@@ -11,7 +11,7 @@
 </head>
 <body>
   <ul class="nav nav-pills">
-    <li role="presentation"><a href="/">U * V I E W</a></li>
+    <li role="presentation" class="logo"><a href="/">U * V I E W</a></li>
     <% if current_user %>
         <li role="presentation" class="navbar-text navbar-right">
         <%= link_to 'Logout', session_path('dummy'), method: :delete %>
@@ -27,17 +27,6 @@
     <% end %>
     </li>
   </ul>
-<!--   <p>
-  <% if current_user %>
-    Welcome, <%= current_user.user_name %>
-    &nbsp;&nbsp;|&nbsp;&nbsp;
-    <%= link_to 'Logout', session_path('dummy'), method: :delete %>
-  <% else %>
-    <%= link_to 'Login', login_path %>
-    &nbsp;&nbsp;|&nbsp;&nbsp;
-    <%= link_to 'Sign Up', new_user_path %>
-  <% end %>
-  </p> -->
 <%= yield %>
 
 </body>
