@@ -6,7 +6,6 @@ class CreateUsers < ActiveRecord::Migration
       t.text :about_me
       t.boolean :is_owner
       t.boolean :is_top_rev
-      t.string :review_id
       t.string :email
       t.string :password_digest
 

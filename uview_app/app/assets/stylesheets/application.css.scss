@@ -19,21 +19,26 @@
 @import "bootstrap";
 
 @font-face {
-  font-family: Adamas;
-  src: url('Adamas.otf');
+  font-family: Ombra;
+  src: url('ombra.otf');
 }
 
 .logo {
   min-width: 435px;
-  font-size: 40px;
-  font-family: Adamas;
+  font-size: 70px;
+  font-family: Ombra;
 }
 
 .navbar,
 .nav {
-  padding: 10px;
 }
 
 .navbar-text {
-  font-size: 20px;
+  font-size: 40px;
+  font-family: Ombra;
+}
+
+.rating-stars {
+  display: inline-block;
+  margin-left: 8px;
 }

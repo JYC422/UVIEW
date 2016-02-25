@@ -1,0 +1,23 @@
+<main>
+  <h2><%= @restaurant.rstrnt_name %></h2>
+  <p><%= "Phone Number: #{@restaurant.phone_num}" %></p>
+  <p><%= "Address: #{@restaurant.address}" %></p>
+  <p><%= "Hours: #{@restaurant.hours}" %></p>
+  <p>Website: <a href="https://<%= @restaurant.rstrnt_site %>"><%= "#{@restaurant.rstrnt_site}" %></a></p>
+  <p><%= link_to "Edit Restaurant Info", edit_restaurant_path %></p>
+  <p><%= link_to "Delete Restaurant", restaurant_path, method: :delete, data: { confirm: "Are you sure?" } %></p>
+  <p>Reviews:</p>
+
+  <%= link_to "Add Review", new_restaurant_review_path(@restaurant) %>
+
+  <% @restaurant.reviews.each do |review| %>
+    <p><%= review.food_rating    %></p>
+    <p><%= review.service_rating %></p>
+    <p><%= review.ambiance_rating %></p>
+    <p><%= review.review_content        %></p>
+    <p><%= link_to "Delete Review", review_path, method: :delete, data: { confirm: "Are you sure?" } %></p>
+    <p><%= link_to "Edit Review", edit_review_path %></p>
+  <% end %>
+  <br>
+
+</main>

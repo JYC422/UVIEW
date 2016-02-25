@@ -1,0 +1,34 @@
+<h1>Edit Restaurant Info</h1>
+<%= form_for @restaurant do |f| %>
+  <% if @restaurant.errors.any? %>
+    <div class="error_messages">
+      <h2>Form is invalid</h2>
+      <ul>
+        <% for message in @restaurant.errors.full_messages %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="field">
+    <%= f.label "Restaurant Name" %>
+    <%= f.text_field :rstrnt_name %>
+  </div>
+  <div class="field">
+    <%= f.label "Address" %>
+    <%= f.text_field :address %>
+  </div>
+  <div class="field">
+    <%= f.label "Phone Number" %>
+    <%= f.text_field :phone_num %>
+  </div>
+  <div class="field">
+    <%= f.label "Hours" %>
+    <%= f.text_field :hours %>
+  </div>
+  <div class="field">
+    <%= f.label "Website" %>
+    <%= f.text_field :rstrnt_site %>
+  </div>
+  <div class="actions"><%= f.submit %></div>
+<% end %>

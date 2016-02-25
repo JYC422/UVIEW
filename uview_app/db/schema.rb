@@ -11,16 +11,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160222181409) do
+ActiveRecord::Schema.define(version: 20160224220345) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "restaurants", force: :cascade do |t|
     t.string   "rstrnt_name"
-    t.integer  "avg_food"
-    t.integer  "avg_service"
-    t.integer  "avg_ambiance"
     t.string   "tags"
     t.string   "address"
     t.string   "phone_num"
@@ -28,8 +25,8 @@ ActiveRecord::Schema.define(version: 20160222181409) do
     t.string   "hours"
     t.string   "rstrnt_site"
     t.string   "review_id"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
   create_table "reviews", force: :cascade do |t|
@@ -40,7 +37,12 @@ ActiveRecord::Schema.define(version: 20160222181409) do
     t.integer  "reviewer_revs"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
+    t.integer  "user_id"
+    t.integer  "restaurant_id"
   end
+
+  add_index "reviews", ["restaurant_id"], name: "index_reviews_on_restaurant_id", using: :btree
+  add_index "reviews", ["user_id"], name: "index_reviews_on_user_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "user_name"
@@ -48,11 +50,12 @@ ActiveRecord::Schema.define(version: 20160222181409) do
     t.text     "about_me"
     t.boolean  "is_owner"
     t.boolean  "is_top_rev"
-    t.string   "review_id"
     t.string   "email"
     t.string   "password_digest"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
   end
 
+  add_foreign_key "reviews", "restaurants"
+  add_foreign_key "reviews", "users"
 end

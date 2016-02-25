@@ -11,6 +11,14 @@ private
       @current_user ||= User.find(session[:user_id]) if session[:user_id]
     end
 
+    def current_rest
+      @current_rest ||= Restaurant.find(session[:restaurant_id]) if session[:restaurant_id]
+    end
+
+    def current_review
+      @current_review ||= Review.find(session[:review_id]) if session[:review_id]
+    end
+
     def authorize
       redirect_to login_path, alert: 'Not authorized - you must be logged in!' if current_user.nil?
     end

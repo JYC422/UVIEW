@@ -1,7 +1,14 @@
 <main>
     <h1><%= @user.user_name %></h1>
-    <h3><%= "#{@user.num_reviews} Reviews" %></h1>
-    <h3><%= "About Me: #{@user.about_me}" %></h1>
+    <%= link_to "https://goo.gl/QirYt5" do %>
+      <%= gravatar_image_tag(current_user.email, :alt => @user.user_name, width: 10) %><br>
+      <span><small>Change Gravatar</small></span>
+    <% end %>
+    <br>
+    <br>
+    <p><%= "Number of Reviews: #{@user.num_reviews}" %></p>
+    <p><%= "About Me: #{@user.about_me}" %></p>
+    <p>Reviews:</p>
 
     <%= link_to "Edit", edit_user_path %>
 </main>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>UviewApp</title>
+  <title>U * V I E W</title>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
@@ -12,17 +12,52 @@
 <body>
   <ul class="nav nav-pills">
     <li role="presentation" class="logo"><a href="/">U * V I E W</a></li>
+
+<!--     <li role="presentation">
+    <div class="dropdown">
+      <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+        Restaurant
+        <span class="caret"></span>
+      </button>
+      <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+        <li><a href="#"></a>1</li>
+        <li><a href="#"></a>2</li>
+        <li><a href="#"></a>3</li>
+        <li role="separator" class="divider"></li>
+        <li><a href="#">Separated link</a></li>
+      </ul>
+    </div>
+    </li>
+
+    <li role="presentation">
+    <div class="dropdown">
+      <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+        City
+        <span class="caret"></span>
+      </button>
+      <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+        <li><a href="#"></a>1</li>
+        <li><a href="#"></a>2</li>
+        <li><a href="#"></a>3</li>
+        <li role="separator" class="divider"></li>
+        <li><a href="#">Separated link</a></li>
+      </ul>
+    </div>
+    </li> -->
+
     <% if current_user %>
         <li role="presentation" class="navbar-text navbar-right">
-        <%= link_to 'Logout', session_path('dummy'), method: :delete %>
+          <%= link_to 'Logout', session_path('dummy'), method: :delete %>
         </li>
         <li role="presentation" class="navbar-text navbar-right">
-        <%= link_to current_user.user_name, current_user %>
+          <%= link_to current_user.user_name, current_user %>
         </li>
     <% else %>
-        <li role="presentation" class="navbar-text navbar-right"><%= link_to 'Sign Up', new_user_path %></li>
         <li role="presentation" class="navbar-text navbar-right">
-        <%= link_to 'Login', login_path %>
+          <%= link_to 'Sign Up', new_user_path %>
+        </li>
+        <li role="presentation" class="navbar-text navbar-right">
+          <%= link_to 'Login', login_path %>
         </li>
     <% end %>
     </li>

@@ -1,0 +1,16 @@
+<h1>RESTAURANTS</h1>
+<br>
+
+<% @restaurants.each do |restaurant| %>
+    <p><%= restaurant.rstrnt_name %></p>
+    <p><%= "Phone Number: #{restaurant.phone_num}" %></p>
+    <p><%= "Address: #{restaurant.address}" %></p>
+    <p><%= "Hours: #{restaurant.hours}" %></p>
+    <p>Website: <a href="https://<%= restaurant.rstrnt_site %>"><%= "#{restaurant.rstrnt_site}" %></a></p>
+    <p>Reviews:</p>
+    <br>
+    <br>
+    <br>
+<% end %>
+
+<h2><%= link_to "Add New Restaurant", new_restaurant_path %></h2>
