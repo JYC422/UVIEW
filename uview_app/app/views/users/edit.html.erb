@@ -1,4 +1,4 @@
-<h1>Edit Profile</h1>
+<h1 class="editprof">- Edit Profile -</h1>
 <%= form_for current_user do |f| %>
   <% if current_user.errors.any? %>
     <div class="error_messages">
@@ -23,5 +23,5 @@
     <%= f.text_field :about_me %>
   </div>
 
-  <div class="actions"><%= f.submit %></div>
+  <div class="actions butt"><%= f.submit "Submit " %></div>
 <% end %>

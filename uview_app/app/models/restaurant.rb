@@ -15,15 +15,18 @@ class Restaurant < ActiveRecord::Base
   end
 
   def food_rating_icons
-    raw(("<i class='glyphicon glyphicon-star'></i> " * food_rating) + ("<i class='glyphicon glyphicon-star-empty'></i> " * (5-food_rating)).strip)
+    self.food_rating ||= 0
+    raw(("<i class='glyphicon glyphicon-star'></i> " * self.food_rating) + ("<i class='glyphicon glyphicon-star-empty'></i> " * (5-self.food_rating)).strip)
   end
 
   def service_rating_icons
-    raw(("<i class='glyphicon glyphicon-star'></i> " * service_rating) + ("<i class='glyphicon glyphicon-star-empty'></i> " * (5-food_rating)).strip)
+    self.service_rating ||= 0
+    raw(("<i class='glyphicon glyphicon-star'></i> " * self.service_rating) + ("<i class='glyphicon glyphicon-star-empty'></i> " * (5-self.service_rating)).strip)
   end
 
   def ambiance_rating_icons
-    raw(("<i class='glyphicon glyphicon-star'></i> " * ambiance_rating) + ("<i class='glyphicon glyphicon-star-empty'></i> " * (5-food_rating)).strip)
+    self.ambiance_rating ||= 0
+    raw(("<i class='glyphicon glyphicon-star'></i> " * self.ambiance_rating) + ("<i class='glyphicon glyphicon-star-empty'></i> " * (5-self.ambiance_rating)).strip)
   end
 
 end

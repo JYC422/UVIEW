@@ -9,6 +9,17 @@
     <p><%= "Number of Reviews: #{@user.num_reviews}" %></p>
     <p><%= "About Me: #{@user.about_me}" %></p>
     <p>Reviews:</p>
-
+    <% @user.reviews.each do |review|%>
+        <%= review.restaurant.rstrnt_name %>
+        <br>
+        <%= review.food_rating_icons %>
+        <br>
+        <%= review.service_rating_icons %>
+        <br>
+        <%= review.ambiance_rating_icons %>
+        <br>
+        <%= review.review_content %>
+    <% end %>
+    <br>
     <%= link_to "Edit", edit_user_path %>
 </main>

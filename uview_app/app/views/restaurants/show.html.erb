@@ -11,12 +11,13 @@
   <%= link_to "Add Review", new_restaurant_review_path(@restaurant) %>
 
   <% @restaurant.reviews.each do |review| %>
-    <p><%= review.food_rating    %></p>
-    <p><%= review.service_rating %></p>
-    <p><%= review.ambiance_rating %></p>
+    <p><%= review.user.user_name        %></p>
+    <p><%= review.food_rating_icons    %></p>
+    <p><%= review.service_rating_icons %></p>
+    <p><%= review.ambiance_rating_icons %></p>
     <p><%= review.review_content        %></p>
-    <p><%= link_to "Delete Review", review_path, method: :delete, data: { confirm: "Are you sure?" } %></p>
-    <p><%= link_to "Edit Review", edit_review_path %></p>
+    <p><%= link_to "Delete Review", review_path(review), method: :delete, data: { confirm: "Are you sure?" } %></p>
+    <p><%= link_to "Edit Review", edit_review_path(review) %></p>
   <% end %>
   <br>
 
