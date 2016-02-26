@@ -11,13 +11,15 @@
 
   <div class="userrev">
   <% @restaurant.reviews.each do |review| %>
-    <p class="profrev"><strong><%= review.user.user_name %>&nbsp;|&nbsp;<%= link_to "Delete Review", review_path(review), method: :delete, data: { confirm: "Are you sure?" } %>&nbsp;|&nbsp;<%= link_to "Edit Review", edit_review_path(review) %></strong></p>
-    <p><%= review.food_rating_icons %></p>
-    <p><%= review.service_rating_icons %></p>
-    <p><%= review.ambiance_rating_icons %></p>
-    <p style="width: 700px; word-wrap:break-word;"><%= review.review_content %></p>
+    <div class="rev">
+      <p class="profrev"><strong><%= review.user.user_name %>&nbsp;|&nbsp;<%= link_to "Delete Review", review_path(review), method: :delete, data: { confirm: "Are you sure?" } %>&nbsp;|&nbsp;<%= link_to "Edit Review", edit_review_path(review) %></strong></p>
+      <p><%= review.food_rating_icons %></p>
+      <p><%= review.service_rating_icons %></p>
+      <p><%= review.ambiance_rating_icons %></p>
+      <p style="width: 700px; word-wrap:break-word;"><%= review.review_content %></p>
+    </div>
+    <br>
   <% end %>
   </div>
-  <br>
 
 </main>

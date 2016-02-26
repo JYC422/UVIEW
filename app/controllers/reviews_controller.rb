@@ -1,5 +1,7 @@
 class ReviewsController < ApplicationController
 
+    before_action :authorize, only: [:edit, :update, :destroy]
+
     def index
       @reviews = Review.all
     end
@@ -38,7 +40,7 @@ class ReviewsController < ApplicationController
       :service_rating,
       :ambiance_rating,
       :review_content,
-      :user_id.user_name
+      :user_name
       ))
         redirect_to restaurant_path(@review.restaurant)
       else
