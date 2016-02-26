@@ -19,31 +19,31 @@
 @import "bootstrap";
 
 @font-face {
-  font-family: Ordo;
-  src: font-url('/assets/fonts/order_o.ttf');
+  font-family: 'Ordo';
+  src: font-url('order_o.ttf');
 }
 
 @font-face {
-  font-family: Ordl;
-  src: font-url('/assets/fonts/order_l.ttf');
+  font-family: 'Ordl';
+  src: font-url('order_l.ttf');
 }
 
 @font-face {
-  font-family: Ordr;
-  src: font-url('/assets/fonts/order_r.ttf');
+  font-family: 'Ordr';
+  src: font-url('order_r.ttf');
 }
 
 .logo {
   min-width: 800px;
   font-size: 100px;
-  font-family: Ordo;
+  font-family: 'Ordo';
   font-weight: bolder;
 }
 
 .navbar-text {
   min-width: 200px;
   font-size: 30px;
-  font-family: Ordl;
+  font-family: 'Ordl';
 }
 
 .rating-stars {
@@ -52,38 +52,38 @@
 }
 
 .field {
-  font-family: Ordl;
+  font-family: 'Ordl';
   margin-left: 20px;
   font-size: 25px;
 }
 
 .butt {
-  font-family: Ordo;
+  font-family: 'Ordo';
   margin-left: 20px;
   font-size: 25px;
 }
 
 .formhead {
-  font-family: Ordo;
+  font-family: 'Ordo';
   font-weight: bold;
   font-size: 50px;
   margin-left: 20px;
 }
 
 .profname {
-  font-family: Ordo;
+  font-family: 'Ordo';
   font-size: 50px;
   font-weight: bolder;
 }
 
 .profattr {
-  font-family: Ordr;
+  font-family: 'Ordr';
   font-size: 20px;
   margin-left: 20px;
 }
 
 .profrev {
-  font-family: Ordo;
+  font-family: 'Ordo';
   font-size: 20px;
 }
 
@@ -111,7 +111,7 @@
 
 .edel {
   margin-left: 20px;
-  font-family: Ordl;
+  font-family: 'Ordl';
 }
 
 .nav > li > a:hover,
@@ -126,13 +126,13 @@
 }
 
 .numrev {
-  font-family: Ordr;
+  font-family: 'Ordr';
   font-size: 20px;
 }
 
 .rstname {
   margin-left: 12px;
-  font-family: Ordo;
+  font-family: 'Ordo';
   font-size: 50px;
   font-weight: bolder;
 }
@@ -143,7 +143,7 @@
 }
 
 .form-inline {
-  font-family: Ordl;
+  font-family: 'Ordl';
   font-size: 30px;
 }
 
