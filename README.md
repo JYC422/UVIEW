@@ -38,6 +38,6 @@ By Ray Chen
 6. Friends List  
 7. Filter by tags  
 
-###**Site**: http://jyc422.github.io/uview
+###**Site**: https://rocky-crag-85394.herokuapp.com
 
 ###**User Stories**: https://trello.com/b/5MxuGn55/uview

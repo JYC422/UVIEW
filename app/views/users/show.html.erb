@@ -1,11 +1,25 @@
 <main class="profile">
     <div class="prof pic"><%= link_to "https://goo.gl/QirYt5" do %>
-      <%= gravatar_image_tag(current_user.email, :alt => @user.user_name, width: 10) %><br>
-    <span><small>Change Gravatar</small></span>
-    <% end %></div>
+        <%= gravatar_image_tag(@user.email, :alt => @user.user_name, width: 10) %>
+        <br>
+        <span><small>Change Gravatar</small></span>
+        <% end %>
+    </div>
     <div class="prof">
-        <div class="profname"><%= @user.user_name %>&nbsp;<small class="edit"><%= link_to "Edit Profile", edit_user_path %>&nbsp; | &nbsp;<%= link_to "Register Restaurant", new_restaurant_path %></small></div>
-        <div class="numrev"><%= "Number of Reviews: #{@user.num_reviews}" %></div>
+        <div class="profname">
+            <%= @user.user_name %>
+            &nbsp;
+            <small class="edit">
+                <% if current_user == @user %>
+                    <%= link_to "Edit Profile", edit_user_path %>
+                    &nbsp; | &nbsp;
+                    <%= link_to "Register Restaurant", new_restaurant_path %>
+                <% end %>
+            </small>
+        </div>
+        <div class="numrev">
+            <%= "Number of Reviews: #{@user.num_reviews}" %>
+        </div>
     </div>
     <br>
     <br>
@@ -15,19 +29,30 @@
     <p class="profattr">Reviews:</p>
 
     <div class="userrev">
-    <% @user.reviews.each do |review|%>
-        <div class="rev">
-        <div class="profrev"><strong><%= link_to review.restaurant.rstrnt_name, restaurant_path(review.restaurant) %>&nbsp;|&nbsp;<%= link_to "Delete Review", review_path(review), method: :delete, data: { confirm: "Are you sure?" } %>&nbsp;|&nbsp;<%= link_to "Edit Review", edit_review_path(review) %></strong></div>
-        <%= review.food_rating_icons %> Food
-        <br>
-        <%= review.service_rating_icons %> Service
-        <br>
-        <%= review.ambiance_rating_icons %> Ambiance
-        <br>
-        <p style="width: 700px; word-wrap:break-word;"><%= review.review_content %></p>
-        </div>
-        <br>
-    <% end %>
+        <% @user.reviews.each do |review|%>
+            <div class="rev">
+                <div class="profrev">
+                    <strong>
+                        <%= link_to review.restaurant.rstrnt_name, restaurant_path(review.restaurant) %>
+                        <% if current_user == @user %>
+                            &nbsp;|&nbsp;
+                            <%= link_to "Delete Review", review_path(review), method: :delete, data: { confirm: "Are you sure?" } %>
+                            &nbsp;|&nbsp;
+                            <%= link_to "Edit Review", edit_review_path(review) %>
+                        <% end %>
+                    </strong>
+                </div>
+
+                <%= review.food_rating_icons %> Food
+                <br>
+                <%= review.service_rating_icons %> Service
+                <br>
+                <%= review.ambiance_rating_icons %> Ambiance
+                <br>
+                <p style="width: 700px; word-wrap:break-word;"><%= review.review_content %></p>
+            </div>
+            <br>
+        <% end %>
     </div>
 
 </main>
