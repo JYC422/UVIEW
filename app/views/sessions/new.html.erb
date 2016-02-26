@@ -1,0 +1,13 @@
+<h1 class="formhead">- Login -</h1>
+<p id="alert"><%= alert %></p>
+<%= form_tag sessions_path do %>
+  <div class="field">
+    <%= label_tag "Email:" %>
+    <%= text_field_tag :email, params[:email] %>
+  </div><br>
+  <div class="field">
+    <%= label_tag "Password:" %>
+    <%= password_field_tag :password %>
+  </div><br>
+  <div class="actions butt"><%= submit_tag "Log in " %></div>
+<% end %>

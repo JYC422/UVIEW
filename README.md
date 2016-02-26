@@ -9,8 +9,6 @@ By Ray Chen
 - HTML  
 - CSS  
 - Javascript  
-- JQuery  
-- JQuery UI  
 - Ruby  
 - Ruby on Rails  
 - Bootstrap  
@@ -37,6 +35,8 @@ By Ray Chen
 3. Verify restaurant owner
 4. Expand search locations
 5. Account email verification
+6. Friends List  
+7. Filter by tags  
 
 ###**Site**: http://jyc422.github.io/uview
 

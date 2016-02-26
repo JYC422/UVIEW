@@ -1,0 +1,21 @@
+<h1 class="formhead">- New Review -</h1>
+
+  <%= form_for([@restaurant, @review]) do |f| %>
+    <div class="field">
+      <%= f.label "Food Rating:" %>
+      <%= f.text_field :food_rating, placeholder: "Rate 1 - 5", style: "font-family: Helvetica Neue" %>
+    </div>
+    <div class="field">
+      <%= f.label "Service Rating:" %>
+      <%= f.text_field :service_rating, placeholder: "Rate 1 - 5", style: "font-family: Helvetica Neue" %>
+    </div>
+    <div class="field">
+      <%= f.label "Ambiance Rating:" %>
+      <%= f.text_field :ambiance_rating, placeholder: "Rate 1 - 5", style: "font-family: Helvetica Neue" %>
+    </div>
+    <div class="field">
+      <%= f.label "Comment:" %><br>
+      <%= f.text_area :review_content %>
+    </div>
+    <div class="actions"><%= f.submit %></div>
+  <% end %>

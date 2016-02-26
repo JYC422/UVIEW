@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>U * V I E W</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+</head>
+<body>
+  <ul class="nav nav-pills">
+
+    <div class="div1">
+      <li role="presentation" class="logo"><a href="/">U - V I E W</a></li>
+    </div>
+
+    <div class="div2">
+    <div class="div3">
+      <% if current_user %>
+          <li role="presentation" class="navbar-text navbar-right">
+            <%= link_to '.Logout', session_path('dummy'), method: :delete %>
+          </li>
+          <li role="presentation" class="navbar-text navbar-right">
+            <%= link_to "." + current_user.user_name, current_user %>
+          </li>
+      <% else %>
+          <li role="presentation" class="navbar-text navbar-right">
+            <%= link_to '.Sign Up', new_user_path %>
+          </li>
+          <li role="presentation" class="navbar-text navbar-right">
+            <%= link_to '.Login', login_path %>
+          </li>
+      <% end %>
+    </div>
+
+    <div class="div4">
+      <li role="presentation">
+        <%= form_tag restaurants_path, method: :get, class: "form-inline" do %>
+          <%= collection_select("", :restaurant_id, Restaurant.all, :id, :rstrnt_name, {prompt: "Restaurant"}, { class: "form-control", id: "restaurant-search" }) %>
+          <%= submit_tag "Go!", disabled: true, id: "search-submit", class: "btn btn-primary" %>
+        <% end %>
+
+        <script>
+        $(document).ready(function() {
+          $("#restaurant-search").on("change", function(evt) {
+            if (evt.target.value != "") {
+              $("#search-submit").attr("disabled", false);
+            } else {
+              $("#search-submit").attr("disabled", true);
+            }
+          });
+        });
+        </script>
+      </li>
+    </div>
+    </div>
+</ul>
+
+  <%= yield %>
+</body>
+</html>

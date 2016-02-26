@@ -1,0 +1,23 @@
+<main class="profile">
+
+  <h2 class="rstname"><%= @restaurant.rstrnt_name %>&nbsp;<small class="edit"><%= link_to "Review This Restaurant!", new_restaurant_review_path(@restaurant) %></small></h2>
+  <p class="profattr"><%= "Phone Number: #{@restaurant.phone_num}" %></p>
+  <p class="profattr"><%= "Address: #{@restaurant.address}" %></p>
+  <p class="profattr"><%= "Hours: #{@restaurant.hours}" %></p>
+  <p class="profattr">Website: <a href="https://<%= @restaurant.rstrnt_site %>"><%= "#{@restaurant.rstrnt_site}" %></a></p>
+  <p class="edel"><%= link_to "Edit Restaurant Info", edit_restaurant_path %></p>
+  <p class="edel"><%= link_to "Delete Restaurant", restaurant_path, method: :delete, data: { confirm: "Are you sure?" } %></p>
+  <p class="profattr">Reviews:</p>
+
+  <div class="userrev">
+  <% @restaurant.reviews.each do |review| %>
+    <p class="profrev"><strong><%= review.user.user_name %>&nbsp;|&nbsp;<%= link_to "Delete Review", review_path(review), method: :delete, data: { confirm: "Are you sure?" } %>&nbsp;|&nbsp;<%= link_to "Edit Review", edit_review_path(review) %></strong></p>
+    <p><%= review.food_rating_icons %></p>
+    <p><%= review.service_rating_icons %></p>
+    <p><%= review.ambiance_rating_icons %></p>
+    <p style="width: 700px; word-wrap:break-word;"><%= review.review_content %></p>
+  <% end %>
+  </div>
+  <br>
+
+</main>
