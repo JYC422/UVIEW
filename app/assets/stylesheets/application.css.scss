@@ -20,17 +20,17 @@
 
 @font-face {
   font-family: Ordo;
-  src: url('order_o.ttf');
+  src: font-url('/assets/fonts/order_o.ttf');
 }
 
 @font-face {
   font-family: Ordl;
-  src: url('order_l.ttf');
+  src: font-url('/assets/fonts/order_l.ttf');
 }
 
 @font-face {
   font-family: Ordr;
-  src: url('order_r.ttf');
+  src: font-url('/assets/fonts/order_r.ttf');
 }
 
 .logo {
