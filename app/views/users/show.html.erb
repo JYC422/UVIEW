@@ -17,7 +17,7 @@
     <div class="userrev">
     <% @user.reviews.each do |review|%>
         <div class="rev">
-        <div class="profrev"><strong><%= review.restaurant.rstrnt_name %>&nbsp;|&nbsp;<%= link_to "Delete Review", review_path(review), method: :delete, data: { confirm: "Are you sure?" } %>&nbsp;|&nbsp;<%= link_to "Edit Review", edit_review_path(review) %></strong></div>
+        <div class="profrev"><strong><%= link_to review.restaurant.rstrnt_name, restaurant_path(review.restaurant) %>&nbsp;|&nbsp;<%= link_to "Delete Review", review_path(review), method: :delete, data: { confirm: "Are you sure?" } %>&nbsp;|&nbsp;<%= link_to "Edit Review", edit_review_path(review) %></strong></div>
         <%= review.food_rating_icons %> Food
         <br>
         <%= review.service_rating_icons %> Service
